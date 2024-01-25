@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pennsylvania Cities Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+</head>
+<body>
+
+    <div>
+      <h1>Pennsylvania</h1>
+    </div>
+  <div id="map" style="width: 600px; height: 400px;"></div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <script>
+
+// Prompt used to generate map:
+//'Create a leaflet map that pinpoints three cities in pennsylvania - include everything I need to run the program'
+
+// leaflet documentation: map > creation
+  var map = L.map('map').setView([40.5, -77.5], 7);
+
+
+  // leaflet documentation: raster layers > tile layers > creation
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // leaflet documenation: UI layers > marker > creation
+  var philadelphia = L.marker([39.9523, -75.1638]).addTo(map)
+    .bindPopup('Philadelphia');
+
+  var pittsburgh = L.marker([40.4406, -79.9959]).addTo(map)
+    .bindPopup('Pittsburgh');
+
+  var harrisburg = L.marker([40.3784, -76.8756]).addTo(map)
+    .bindPopup('Harrisburg');
+
+
+
+
+  </script>
+
+</body>
+</html>
